@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/booking
+Content-Type: application/json
+
+{
+  "booking_start": "2023-11-30T10:00:00",
+  "booking_end": "2023-12-05T12:30:00",
+  "user_id": 12,
+  "goat_id": 45
+}
+

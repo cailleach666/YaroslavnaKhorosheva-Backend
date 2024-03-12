@@ -1,0 +1,8 @@
+PUT http://localhost:8080/api/goat/1
+Content-Type: application/json
+
+{
+  "name": "Timmu40",
+  "description": "Energiapomm",
+  "image_url": "pildi"
+}

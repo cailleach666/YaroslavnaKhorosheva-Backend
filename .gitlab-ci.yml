@@ -1,0 +1,29 @@
+stages:
+  - build
+  - deploy
+
+build test-backend:
+  stage: build
+  only:
+    refs:
+      - main 
+  tags:
+    - main
+  script:
+    - ./gradlew clean build
+    - docker build -t taltech-farm .
+    #- docker tag taltech-farm:latest taltech-farm/taltech-farm:latest
+    #- docker push simplytobo/taltech-farm:latest
+    
+
+deploy test-backend:
+  stage: deploy
+  only:
+    refs:
+      - main
+  tags:
+    - main
+  script:
+    - cd /opt/web-project
+    - docker-compose down
+    - docker-compose up -d
